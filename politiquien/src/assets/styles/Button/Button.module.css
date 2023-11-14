@@ -1,0 +1,47 @@
+/* Buttons */
+.primary, .outline-primary, .black, .outline-black, .blur-black  {
+  @apply font-montserrat text-callout lg:text-headline uppercase font-semibold transition duration-300 ease-in-out
+      rounded-lg md:rounded-xl
+      py-3 px-4
+      lg:py-[14px] lg:px-6;
+}
+
+.primary {
+  @apply bg-primary-100 text-white-100 hover:bg-[#FF123F] active:bg-primary-75 disabled:bg-primary-22 disabled:text-primary-50;
+}
+
+.outline-primary {
+  @apply text-primary-100 ring-[3px] ring-inset ring-primary-100 hover:bg-primary-100 hover:text-white-100 active:bg-primary-75 disabled:bg-primary-22 disabled:text-primary-50 disabled:ring-primary-50;
+}
+
+.black {
+  @apply  bg-black-88 text-white-100 hover:bg-black-100 active:bg-black-75 disabled:bg-black-22 disabled:text-white-75;
+}
+
+.outline-black {
+  @apply text-black-100 ring-[2px] ring-inset ring-black-88 hover:bg-black-100 hover:text-white-100 active:bg-black-75 disabled:bg-white-100 disabled:text-black-22 disabled:ring-black-22;
+}
+
+.blur-black {
+  @apply text-white-100 backdrop-blur-30 bg-black-50 hover:bg-black-75 active:bg-black-22 disabled:bg-black-10 disabled:text-black-22;
+}
+
+.small{
+  @apply h-10 flex justify-center items-center px-4 text-subhead rounded-lg ;
+}
+.normal{
+  @apply py-3 px-6;
+}
+.large{
+  @apply py-4 px-8;
+}
+
+.icon {
+  @apply bg-fill-tertiary cursor-pointer
+      py-2 px-3
+      lg:py-3 lg:px-5
+      rounded-xl
+      block
+      w-fit
+      ;
+}

@@ -1,0 +1,18 @@
+.white, .black{
+  @apply text-headline rounded-xl ring-1 ring-transparent backdrop-blur-30 py-4 h-[40px] lg:h-[48px] px-6 w-full;
+}
+input[type=text].white{
+  @apply bg-white-22 text-white-100 placeholder:text-white-50 placeholder:font-light hover:ring-white-50 focus:ring-white-100 active:ring-white-100;
+}
+.black{
+  @apply bg-fill-tertiary text-black-100 placeholder:text-black-50 hover:ring-black-10 focus:ring-black-10;
+}
+.sm{
+  @apply px-4 py-2;
+}
+.large{
+  @apply px-6 py-3
+}
+.category {
+  @apply px-2 py-1 lg:px-3 lg:py-1 text-caption1 xl:text-footnote rounded-md font-normal text-white-88 bg-primary-75 backdrop-blur-30;
+}

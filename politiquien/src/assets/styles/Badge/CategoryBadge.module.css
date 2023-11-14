@@ -1,0 +1,17 @@
+.primary, .secondary, .cheking{
+  border: none;
+  border-radius: 8px;
+  @apply py-1 px-2 text-subhead font-normal;
+}
+
+.primary{
+  @apply text-primary-75 bg-primary-10 backdrop-blur-30;
+}
+
+.cheking{
+  @apply text-white-75 bg-primary-50 backdrop-blur-30;
+}
+
+.badge-success{
+  @apply text-green-500 bg-green-100;
+}

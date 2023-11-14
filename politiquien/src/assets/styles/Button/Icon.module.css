@@ -1,0 +1,3 @@
+.ligth{
+  @apply font-semibold text-title4 p-3 lg:p-4 rounded-lg lg:rounded-xl bg-fill-tertiary hover:bg-fill-primary disabled:text-black-22 disabled:bg-fill-quaternary active:bg-fill-tertiary;
+}
