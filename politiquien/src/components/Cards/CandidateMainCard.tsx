@@ -2,15 +2,20 @@ import Image from 'next/image'
 
 function CandidateMainCard() {
   return (
-    <div className='flex gap-x-4 rounded-lg bg-fill-quaternary hover:bg-fill-tertiary p-3 cursor-pointer '>
+    <div className='flex gap-x-3 rounded-xl hover:bg-fill-tertiary p-2 md:p-3 cursor-pointer '>
       <div className='flex-none'>
-        <Image className='bg-black-5 border-none h-20 w-16 rounded-lg' src="" alt="" />
+        <Image className='bg-black-5 h-16 w-12 rounded-lg' src="" alt="" />
       </div>
-      <div className='flex-auto truncate'>
-        <h5 className='text-headline font-semibold text-black-75 truncate'>RUBELA JUANA, TREJO MARQUEZ fsaf</h5>
-        <span className='text-callout text-black-75 block uppercase'>87674356</span>
-        <span className='text-callout text-primary-88 block truncate'>GOBERNADOR REGIONAL</span>
-        <span className='text-callout text-black-75 block uppercase truncate'> Partido popular cristiano</span>
+      <div className='flex-auto flex flex-col gap-1'>
+        <div className='flex flex-row gap-2 justify-between'>
+          <h5 className='text-subhead font-semibold text-black-88 line-clamp-2'>RUBELA JUANA, TREJO MARQUEZ</h5>
+          <span className='text-subhead text-black-50 block uppercase'>87674356</span>
+        </div>
+        <div className='w-full flex flex-col'>
+          <p className='text-footnote text-primary-88 line-clamp-1'>GOBERNADOR REGIONAL</p>
+          <p className='text-footnote text-black-75 uppercase line-clamp-1'> Partido popular cristiano</p>
+          <p className='text-footnote text-black-75 uppercase line-clamp-1'> Elecciones municipales y regionales 2022</p>
+        </div>
       </div>
     </div>
   )

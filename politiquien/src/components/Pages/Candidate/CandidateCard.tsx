@@ -1,16 +1,22 @@
-
-import { PiDotsThreeBold } from "react-icons/pi";
-import ButtonStyle from '@/assets/styles/Button/Button.module.css'
+import { useState } from "react";
 import Link from "next/link";
+
+import { SummaryCandidate } from "@/model";
+
+import DropdownCandidate from "./components/DropdownCandidate";
+
+import ButtonStyle from '@/assets/styles/Button/Button.module.css'
 
 
 function CandidateCard() {
+  const [summaryCandidate, setSummaryCandidate] = useState<SummaryCandidate>({} as SummaryCandidate)
+  
   return (
     <div className='border border-black-22 rounded-xl'>
       <div className='flex flex-col gap-4'>
         <div className='flex flex-row justify-between items-center p-2'>
           <label htmlFor="" className='px-3 py-1 rounded-md bg-fill-secondary text-orange-500 text-headline font-medium uppercase '>Improcedente</label>
-          <PiDotsThreeBold className='text-3xl cursor-pointer text-black-50 hover:text-black-100'/>
+          <DropdownCandidate summaryCandidate={summaryCandidate}/>
         </div>
         <div className='flex-none flex justify-center px-4 rounded-l-xl'>
           <div className='relative'>

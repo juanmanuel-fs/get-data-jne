@@ -1,7 +1,12 @@
-import React from 'react'
-import { PiDotsThreeBold } from 'react-icons/pi'
+'use client'
+
+import React, { useState } from 'react'
+import DropdownCandidate from './components/DropdownCandidate'
+import { SummaryCandidate } from '@/model'
 
 function ApplicationCandidate() {
+  const [summaryCandidate, setSummaryCandidate] = useState<SummaryCandidate>({} as SummaryCandidate)
+
   return (
     <div className='border border-black-22 rounded-xl p-4'>
       <div className='flex flex-row gap-4'>
@@ -16,7 +21,7 @@ function ApplicationCandidate() {
             <div className='flex flex-col gap-1'>
               <div className='w-full flex flex-row justify-center gap-2 sm:justify-between items-center'>
                 <h6 className='text-headline uppercase truncate'>RUBELA JUANA, TREJO MARQUEZ</h6>
-                <PiDotsThreeBold className='text-3xl cursor-pointer text-black-50 hover:text-black-100'/>
+                <DropdownCandidate summaryCandidate={summaryCandidate}/>
               </div>
               <div className='sm:hidden'>
                 <label htmlFor="" className='px-3 py-1 rounded-md bg-fill-secondary text-orange-500 text-headline font-medium uppercase '>Improcedente</label>
@@ -24,14 +29,14 @@ function ApplicationCandidate() {
             </div>
             <div>
               <div className='flex flex-col gap-1'>
-                <span className='text-subhead block text-black-50'>Postulación:</span>
-                <span className='text-callout block font-semibold text-black-100'>ELECCIONES REGIONALES Y MUNICIPALES 2022</span>
+                <span className='text-callout block text-black-50'>Postulación:</span>
+                <span className='text-callout block font-semibold text-black-88'>ELECCIONES REGIONALES Y MUNICIPALES 2022</span>
                 <span className='text-callout block font-semibold text-primary-88'>GOBERNADOR REGIONAL</span>
-                <span className='text-subhead block font-medium text-black-75'>PARTIDO POLITICO SOMOS PERÚ</span>
-                <span className='text-subhead block font-medium text-black-75'>AREQUIPA / AREQUIPA / AREQUIPA</span>
+                <span className='text-callout block font-medium text-black-75'>PARTIDO POLITICO SOMOS PERÚ</span>
+                <span className='text-callout block font-medium text-black-75'>AREQUIPA / AREQUIPA / AREQUIPA</span>
               </div>
-              <div className='hidden sm:block mt-2'>
-                <label htmlFor="" className='px-3 py-1 rounded-md bg-fill-secondary text-orange-500 text-headline font-medium uppercase '>Improcedente</label>
+              <div className='hidden sm:block mt-2 md:flex'>
+                <div className='px-3 py-1 flex rounded-md bg-fill-secondary text-orange-500 text-headline font-medium uppercase '>Improcedente</div>
               </div>
             </div>
             <hr  className="my-2"/>
@@ -48,8 +53,6 @@ function ApplicationCandidate() {
                 <span className='block text-subhead text-black-50'>Legal</span>
                 <span className='block text-subhead font-normal text-black-75 text-orange-400'>3 Denuncias</span>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-2 p-4">
             </div>
           </div>
         </div>

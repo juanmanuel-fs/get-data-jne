@@ -29,7 +29,7 @@ function SearchModal({valueSearch, setOpenSearchModal}: SearchModalProps) {
   return (
     <div className='fixed z-50 left-0 right-0 bottom-0 top-[100px] md:top-[178px] md:bottom-16 w-screen md:max-h-[720px]'>
       <div className='relative w-screen md:max-w-2xl mx-auto ring-1 ring-black-5 shadow-md h-full bg-white-75 backdrop-blur-30 px-4 md:px-8 md:rounded-xl' ref={sectionRef}>
-        <div className="absolute left-0 p-4 md:p-8 right-0 bg-white-10 backdrop-blur-30 border-b-[1px] border-b-black-5 md:rounded-t-xl ">
+        <div className="absolute left-0 p-4 md:p-8 right-0 bg-white-10 backdrop-blur-30 border-b border-b-black-5 md:rounded-t-xl ">
           <div className="absolute top-4 right-4">
             <button className='' onClick={() => setOpenSearchModal(false)}>
               <CgClose className='text-black-50 hover:text-primary-75 text-3xl'/>

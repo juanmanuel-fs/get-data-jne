@@ -1,16 +1,26 @@
 
-import { PiDotsThreeBold } from "react-icons/pi";
+import { useState } from 'react'
+import Link from "next/link"
+
+import { SummaryCandidate } from '@/model'
+
+import DropdownCandidate from "../Pages/Candidate/components/DropdownCandidate"
+
 import ButtonStyle from '@/assets/styles/Button/Button.module.css'
-import Link from "next/link";
 
 
-function CandidateCard() {
+interface CandidateCardInterface {
+  summaryCandidate: SummaryCandidate
+}
+
+function CandidateCard({summaryCandidate}: CandidateCardInterface) {
+
   return (
-    <div className='border border-black-22 rounded-xl'>
+    <div className='border border-black-22 rounded-xl w-[260px] max-w-[500px] flex-auto'>
       <div className='flex flex-col gap-4'>
-        <div className='flex flex-row justify-between items-center p-2'>
-          <label htmlFor="" className='px-3 py-1 rounded-md bg-fill-secondary text-orange-500 text-headline font-medium uppercase '>Improcedente</label>
-          <PiDotsThreeBold className='text-3xl cursor-pointer text-black-50 hover:text-black-100'/>
+        <div className='flex flex-row justify-between items-start p-2'>
+          <label htmlFor="" className='px-3 py-1 rounded-md bg-fill-secondary text-black-75 text-black-500 text-subhead font-medium uppercase '>Guardado</label>
+          <DropdownCandidate summaryCandidate={summaryCandidate}/>
         </div>
         <div className='flex-none flex justify-center px-4 rounded-l-xl'>
           <div className='relative'>
@@ -18,7 +28,7 @@ function CandidateCard() {
             <img className='absolute h-8 w-8 bottom-1 right-1 rounded' src="https://sroppublico.jne.gob.pe/Consulta/Simbolo/GetSimbolo/142" alt="" />
           </div>
         </div>
-        <div className='flex flex-col items-center gap-3 text-center '>
+        <div className='flex flex-col items-center gap-2 text-center '>
           <div className='flex flex-col w-[80%]'>
             <h6 className='text-headline uppercase'>RUBELA JUANA, TREJO MARQUEZ</h6>
           </div>
@@ -27,6 +37,7 @@ function CandidateCard() {
             <span className='text-callout block font-semibold text-black-100'>GOBERNADOR REGIONAL</span>
             <span className='text-subhead block font-medium text-black-75'>PARTIDO POLITICO SOMOS PERÚ</span>
             <span className='text-subhead block font-medium text-black-75'>AREQUIPA / AREQUIPA / AREQUIPA</span>
+            <div className='px-3 py-2 mt-1 rounded-md bg-fill-secondary block text-orange-500 text-subhead font-medium uppercase '>Improcedente</div>
           </div>
         </div>
         <hr  className="mx-4"/>
@@ -45,7 +56,7 @@ function CandidateCard() {
           </div>
         </div>
         <div className="p-4">
-          <Link href='/candidatos/dghgf' className={`${ButtonStyle.black} ${ButtonStyle.small} w-full`} >Hoja de Vida</Link>
+          <Link href='/candidatos/dghgf' className={`${ButtonStyle['black']} ${ButtonStyle.small} w-full`} >Ver Hoja de Vida</Link>
         </div>
       </div>
     </div>

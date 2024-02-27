@@ -93,6 +93,9 @@ function NavBar() {
                   <li className={currentPage === '/candidatos' ? active: ''}>
                     <Link href='/candidatos'>CANDIDATOS</Link>
                   </li>
+                  <li className={currentPage === '/comparar' ? active: ''}>
+                    <Link href='/comparar'>COMPARAR</Link>
+                  </li>
                   <li className={currentPage === '/politichecks' ? active: ''}>
                     <Link href='/politichecks'>POLITICHECKS</Link>
                   </li>

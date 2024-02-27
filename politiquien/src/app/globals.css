@@ -8,6 +8,7 @@
 
 html{
   @apply font-light text-black-75;
+  background-color: white;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -17,6 +18,7 @@ h1,h2,h3,h4,h5,h6 {
 p, span{
   @apply p-0 m-0 text-body xl:text-base;
   font-size: 14px;
+  line-height: 20px;
 }
 small{
   @apply p-0 m-0;

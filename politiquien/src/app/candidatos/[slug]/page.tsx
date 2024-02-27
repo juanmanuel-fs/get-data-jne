@@ -2,10 +2,12 @@ import AcademyDataCandidate from '@/components/Pages/Candidate/AcademyDataCandid
 import ApplicationCandidate from '@/components/Pages/Candidate/ApplicationCandidate'
 import DeclarationCandidate from '@/components/Pages/Candidate/DeclarationCandidate'
 import ExperienceCandidate from '@/components/Pages/Candidate/ExperienceCandidate'
-import FaultsCandidates from '@/components/Pages/Candidate/FaultsCandidates'
+import FaultsCandidate from '@/components/Pages/Candidate/FaultsCandidate'
 import GeneralDataCandidate from '@/components/Pages/Candidate/GeneralDataCandidate'
+import LifeLineCandidate from '@/components/Pages/Candidate/LifeLineCandidate'
 import RelatedNewsCandidate from '@/components/Pages/Candidate/RelatedNewsCandidate'
 import RelatedPolitichecksCandidate from '@/components/Pages/Candidate/RelatedPolitichecksCandidate'
+import SentenceCandidate from '@/components/Pages/Candidate/SentenceCandidate'
 import React from 'react'
 
 function page() {
@@ -19,7 +21,9 @@ function page() {
             <AcademyDataCandidate/>
             <ExperienceCandidate/>
             <DeclarationCandidate/>
-            <FaultsCandidates/>
+            <FaultsCandidate/>
+            <SentenceCandidate/>
+            <LifeLineCandidate/>
           </div>
         </div>
       </div>

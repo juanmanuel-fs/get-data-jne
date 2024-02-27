@@ -1,6 +1,8 @@
 import React from 'react'
 import AccordionCandidate from './components/AccordionCandidate'
 import SimpleLabelInfoCandidate from './components/SimpleLabelInfoCandidate'
+import GeneralModal from '@/components/modals/CandidateModal'
+import AccordionDeclarationCandidate from './components/AccordionDeclarationCandidate'
 
 function ExperienceCandidate() {
   return (
@@ -8,31 +10,47 @@ function ExperienceCandidate() {
       title='EXPERIENCIA LABORAL'
       caption='Muestra los oficios, ocupaciones o profesiones, que ha tenido en el sector público, privado o independiente.'
     >
-      <div className='flex flex-col gap-4'>
-        <div>
-          <h6 className='text-black-75 capitalize font-medium mb-2'>Experiencia 1:</h6>
-          <div className='grid grid-cols-2 gap-2'>
-            <SimpleLabelInfoCandidate className='rounded-none rounded-ss-xl' label='Ocupación' info='ABOGADO, GERENTE GENERAL'/>
-            <SimpleLabelInfoCandidate className='rounded-none rounded-se-xl' label='Lugar de trabajo' info='MUÑIZ, RAMIREZ PEREZ TAIMAN Y LUNA VICTORIA ABOGADOS'/>
-            <SimpleLabelInfoCandidate className='rounded-none' label='RUC' info='47644456573'/>
-            <SimpleLabelInfoCandidate className='rounded-none' label='Periodo' info='2017 - actual'/>
-            <div className='col-span-full'>
-              <SimpleLabelInfoCandidate className='rounded-none rounded-b-xl' label='Comentarios' info='Muestra los oficios, ocupaciones o profesiones, que ha tenido en el sector público, privado o independiente.'/>
-            </div>
-          </div>
+      <div className='flex flex-col'>
+        <div className='flex justify-between text-black-50 flex-row gap-2 text-footnote uppercase font-medium px-4 md:pb-4 border-b border-b-black-10'>
+          <div className=''>Ocupación</div>
+          <div className='mr-9'>Fecha</div>
         </div>
-        <div>
-          <h6 className='text-black-75 capitalize font-medium mb-2'>Experiencia 2:</h6>
-          <div className='grid grid-cols-2 gap-2'>
-            <SimpleLabelInfoCandidate label='Ocupación' info='ABOGADO, GERENTE GENERAL'/>
-            <SimpleLabelInfoCandidate label='Lugar de trabajo' info='MUÑIZ, RAMIREZ PEREZ TAIMAN Y LUNA VICTORIA ABOGADOS'/>
-            <SimpleLabelInfoCandidate label='RUC' info='47644456573'/>
-            <SimpleLabelInfoCandidate label='Periodo' info='2017 - actual'/>
-            <div className='col-span-full'>
-              <SimpleLabelInfoCandidate label='Comentarios' info='Muestra los oficios, ocupaciones o profesiones, que ha tenido en el sector público, privado o independiente.'/>
-            </div>
+        <AccordionDeclarationCandidate description='ABOGADO, GERENTE GENERAL' value='2017 - Actual'>
+          <div className='grid grid-cols-12 gap-2'>
+            <SimpleLabelInfoCandidate className='col-span-8' label='Lugar de trabajo' info='UNIVERSIDAD NACIONAL DE TRUJILLO'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Ruc' info='7654646347'/>
+            <SimpleLabelInfoCandidate className='col-span-8' label='Dirección' info='calle siempre viva'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='País' info='Perú'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Departamento' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Provincia' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Distrito' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-full' label='Comentario' info='ESTUDIE LA CARRERA DE DESARROLLO AMBIENTAL'/>
           </div>
-        </div>
+        </AccordionDeclarationCandidate>
+        <AccordionDeclarationCandidate description='ABOGADO, GERENTE GENERAL' value='2017 - Actual'>
+          <div className='grid grid-cols-12 gap-2'>
+            <SimpleLabelInfoCandidate className='col-span-8' label='Lugar de trabajo' info='UNIVERSIDAD NACIONAL DE TRUJILLO'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Ruc' info='7654646347'/>
+            <SimpleLabelInfoCandidate className='col-span-8' label='Dirección' info='calle siempre viva'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='País' info='Perú'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Departamento' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Provincia' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Distrito' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-full' label='Comentario' info='ESTUDIE LA CARRERA DE DESARROLLO AMBIENTAL'/>
+          </div>
+        </AccordionDeclarationCandidate>
+        <AccordionDeclarationCandidate description='ABOGADO, GERENTE GENERAL' value='2017 - Actual'>
+          <div className='grid grid-cols-12 gap-2'>
+            <SimpleLabelInfoCandidate className='col-span-8' label='Lugar de trabajo' info='UNIVERSIDAD NACIONAL DE TRUJILLO'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Ruc' info='7654646347'/>
+            <SimpleLabelInfoCandidate className='col-span-8' label='Dirección' info='calle siempre viva'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='País' info='Perú'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Departamento' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Provincia' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-4' label='Distrito' info='Lima'/>
+            <SimpleLabelInfoCandidate className='col-span-full' label='Comentario' info='ESTUDIE LA CARRERA DE DESARROLLO AMBIENTAL'/>
+          </div>
+        </AccordionDeclarationCandidate>
       </div>
     </AccordionCandidate>
   )

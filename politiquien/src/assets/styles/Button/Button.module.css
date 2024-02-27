@@ -15,7 +15,7 @@
 }
 
 .black {
-  @apply  bg-black-88 text-white-100 hover:bg-black-100 active:bg-black-75 disabled:bg-black-22 disabled:text-white-75;
+  @apply  bg-black-100 text-white-100 hover:bg-black-88 active:bg-black-75 disabled:bg-black-22 disabled:text-white-75;
 }
 
 .outline-black {

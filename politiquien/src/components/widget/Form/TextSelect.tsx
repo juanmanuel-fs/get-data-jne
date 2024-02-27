@@ -1,22 +1,23 @@
+import { SelectModel } from '@/model'
 import React, { useEffect, useRef, useState } from 'react'
 
 import { SlArrowDown } from "react-icons/sl"
 
-interface TextSelectProps<T> {
+interface TextSelectProps {
   placeholder: string
-  value?: number
+  value?: number | string
   name?: string 
   change: Function
-  options: T[]
+  options: SelectModel[]
 }
 
 
-function TextSelect<T>({placeholder, options, value, change, name= ''}: TextSelectProps<T>) {
+function TextSelect({placeholder, options, value, change, name= ''}: TextSelectProps) {
   const [openOption, setOpenOption] = useState<boolean>(false)
-  const [currentSelected, setCurrentSelected] = useState<T>({} as T)
+  const [currentSelected, setCurrentSelected] = useState<SelectModel>({} as SelectModel)
   const selectRef = useRef<HTMLDivElement>(null)
 
-  const handleClick = (id: number) =>{
+  const handleClick = (id: number | string) =>{
     change(id, name)
     setOpenOption(false)
   }
@@ -34,8 +35,7 @@ function TextSelect<T>({placeholder, options, value, change, name= ''}: TextSele
   },[])
 
   useEffect(() => {
-    setCurrentSelected(options.find((option: T) => option.id == value))
-    console.log(currentSelected)
+    setCurrentSelected(options.find((option) => option.id == value)!)
   },[value])
 
   return (
@@ -51,21 +51,21 @@ function TextSelect<T>({placeholder, options, value, change, name= ''}: TextSele
           {
             openOption &&
               <div className="relative">
-                <div className="absolute z-50 w-full min-w-[320px] right-0 max-h-96 overflow-y-auto ring-1 ring-black-5 bg-white-75 backdrop-blur-30 rounded-xl py-2 shadow-2xl translate-y-3 ease-out duration-500 " ref={selectRef}>
-                  <ul>
+                <div className="absolute z-50 w-[240px] max-w-[320px] right-0 max-h-96 overflow-y-auto ring-1 ring-black-5 bg-white-75 backdrop-blur-30 rounded-xl p-2 shadow-2xl translate-y-3 ease-out duration-500 " ref={selectRef}>
+                  <ul className='flex flex-col gap-1 text-left'>
                     {
                       !!options.length 
                       ? options?.map((option, index ) =>
                           {
                             return ( 
-                              <li className={`px-5 py-2 cursor-pointer hover:bg-fill-tertiary ${currentSelected.id == option.id && 'text-primary-88 bg-fill-tertiary'}`} key={option.id} onClick={()=> {handleClick(option.id)}}>
-                                <span className='text-body'>{option.name}</span>
+                              <li className={`px-3 py-1 rounded-lg cursor-pointer hover:bg-fill-tertiary ${currentSelected.id == option.id && 'text-primary-88 bg-fill-tertiary'}`} key={option.id} onClick={()=> {handleClick(option.id)}}>
+                                <span className='text-subhead'>{option.name}</span>
                               </li>
                             )
                           }
                         )
                       : <li className={`px-5 py-2 select-none`}>
-                          <span className='text-gray-400 text-body'>No se encontró datos</span>
+                          <span className='text-gray-400 text-subhead'>No se encontró datos</span>
                         </li>
                     } 
                   </ul>

@@ -2,7 +2,9 @@
 
 import { ChangeEvent, useEffect, useState } from 'react';
 
+import { SelectModel, SummaryCandidate } from '@/model';
 import {CategoryModel, SearchNewsModel} from '@/models/SearchNews.model'
+
 import SideRightModal from '@/components/modals/SideRightModal'
 import SimpleSelect from '@/components/widget/Form/SimpleSelect'
 import CandidateCard from '@/components/Cards/CandidateCard';
@@ -23,18 +25,18 @@ const data: SearchNewsModel = {
   organization: 0
 } 
 
-const stateData = [
+const stateData: SelectModel [] = [
   {
     id: 12,
-    name: 'Arequipa',
+    name: 'AREQUIPA',
   },
   {
     id: 14,
-    name: 'Lima',
+    name: 'LIMA',
   },
   {
     id: 3,
-    name: 'Ica',
+    name: 'ICA',
   }
 ]
 
@@ -56,8 +58,9 @@ const organizationData = [
 
 function ListCandidate() {
 
+  const [summaryCandidates, setSummaryCandidates] = useState<SummaryCandidate []>([])
   const [filterSearchNews, setFilterSearchNews] = useState<SearchNewsModel>(data)
-  const [state, setState] = useState<any>(stateData)
+  const [states, setStates] = useState<SelectModel[]>(stateData)
   const [organizations, setOrganizations] = useState<any>(organizationData)
   const [openSideRightModal, setOpenSideRightModal] = useState<boolean>(false)
 
@@ -82,7 +85,7 @@ function ListCandidate() {
 
   return (
     <>
-      <div className=''>
+      <div className='col-span-12 lg:col-span-8'>
         <div className='flex flex-col mb-6 gap-4'>
           <div className='flex flex-row gap-4 justify-between items-center'>
             <h5 className='text-title3'>Candidatos</h5>
@@ -103,26 +106,26 @@ function ListCandidate() {
               />
             </div>
             <div className='flex-none hidden md:block'>
-              <SimpleSelect name='state' options={state} value={filterSearchNews.state} change={handleSelect} placeholder='Seleccione un departamento'/>
+              <SimpleSelect name='state' options={states} value={filterSearchNews.state} change={handleSelect} placeholder='Seleccione un departamento'/>
             </div>
             <div className='flex-none' onClick={() => setOpenSideRightModal(true)}>
               <button className={IconButtonStyle.ligth}><IoFilterOutline/></button>
             </div>
           </div>
         </div>
-        <div className='grid gap-4 grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-6'>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
-          <CandidateCard/>
+        <div className='flex flex-wrap gap-4 mb-6'>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
+          <CandidateCard summaryCandidate={summaryCandidates[0]}/>
         </div>
         <div className='flex flex-row gap-2'>
           <button className={ButtonStyle.black} disabled={true}>ANTERIOR</button>
@@ -145,9 +148,9 @@ function ListCandidate() {
             <h6 className='text-title4 text-black-75'>Postulación</h6>
             <div className='flex flex-col gap-2'>
               <label className='text-body text-black-75 block'>Seleccione lugar</label>
-              <SimpleSelect name='state' options={state} value={filterSearchNews.state} change={handleSelect} placeholder='Seleccione un departamento'/>
-              <SimpleSelect name='state' options={state} value={filterSearchNews.state} change={handleSelect} placeholder='Seleccione un provincia'/>
-              <SimpleSelect name='state' options={state} value={filterSearchNews.state} change={handleSelect} placeholder='Seleccione un distrito'/>
+              <SimpleSelect name='state' options={states} value={filterSearchNews.state} change={handleSelect} placeholder='Seleccione un departamento'/>
+              <SimpleSelect name='state' options={states} value={filterSearchNews.state} change={handleSelect} placeholder='Seleccione un provincia'/>
+              <SimpleSelect name='state' options={states} value={filterSearchNews.state} change={handleSelect} placeholder='Seleccione un distrito'/>
             </div>
             <div className=''>
               <label className='text-body text-black-75 block mb-2'>Organizaciones</label>
@@ -156,11 +159,11 @@ function ListCandidate() {
             <h6 className='text-title4 text-black-75'>Hoja de Vida</h6>
             <div className='flex flex-col gap-2'>
               <label className='text-body text-black-75 block'>Seleccione Sexo</label>
-              <SimpleSelect name='state' options={state} value={filterSearchNews.state} change={handleSelect} placeholder='Todos los sexo'/>
+              <SimpleSelect name='state' options={states} value={filterSearchNews.state} change={handleSelect} placeholder='Todos los sexo'/>
             </div>
             <div className='flex flex-col gap-2 mb-auto'>
               <label className='text-body text-black-75 block'>Seleccione Formación Académica</label>
-              <SimpleSelect name='state' options={state} value={filterSearchNews.state} change={handleSelect} placeholder='Todas formaciones academicas'/>
+              <SimpleSelect name='state' options={states} value={filterSearchNews.state} change={handleSelect} placeholder='Todas formaciones academicas'/>
             </div>
             
             <button className={`${ButtonStyle.black} mt-4`} onClick={() => setOpenSideRightModal(false)}>FILTRAR CANDIDATO</button>

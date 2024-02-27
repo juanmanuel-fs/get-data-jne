@@ -15,6 +15,7 @@ interface InputTextInterface {
 }
 
 function InputText({value, change, type = 'black', name, placeholder, autoComplete, icon, isFocus, setIsFocus}: InputTextInterface) {
+  
 
   const focused = () => {
     if(!!value) setIsFocus!(true)
@@ -32,8 +33,8 @@ function InputText({value, change, type = 'black', name, placeholder, autoComple
           value={value} 
           name={name}
           onChange={(e) => change(e)} 
-          onFocus={focused} 
-          onKeyDown={focused} 
+          onFocus={!!setIsFocus ? focused : undefined} 
+          onKeyDown={!!setIsFocus ? focused : undefined} 
           placeholder={placeholder} 
           autoComplete='off'
         />
